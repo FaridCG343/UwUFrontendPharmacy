@@ -1,16 +1,21 @@
 <template>
     <div class="container" style="display: flex; height: 100%; ">
         <div class="left">
-            <ProductsList class="ProductsList" />
-            <AddItem />
-            <TotalToPay />
+            <div class="productListContainer">
+                <ProductsList class="ProductsList" />
+            </div>
         </div>
         <div class="right">
-            <UserData />
+            <div class="productListContainer">
+                <UserData />
+            </div>
         </div>
-
-
     </div>
+    <div class="footPage">
+        <AddItem />
+        <TotalToPay />
+    </div>
+
 </template>
 
 <script>
@@ -57,16 +62,29 @@ body {
 .left {
     width: 65%;
     height: 100%;
-    background: #D0F4DE;
 }
 
 .right {
     flex-grow: 1;
-    background: #FFDEEE;
 
 }
 
 .ProductsList {
     padding: 10px;
+}
+
+.productListContainer {
+    height: 75vh;
+    overflow-x: hidden;
+    overflow-y: auto;
+    padding: 20px;
+
+}
+
+.footPage {
+    background-color: white;
+    width: 100%;
+    padding-bottom: 5px;
+    padding-top: 5px;
 }
 </style>

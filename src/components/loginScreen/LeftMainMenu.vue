@@ -1,6 +1,6 @@
 <template>
     <div class="left">
-        <h1 style="text-align:center; color: #36BCFF; font-size: 50px;"><b>Farmacia UwU</b></h1>
+        <h1 style="text-align:center; color: #333; font-size: 50px;"><b>Farmacia UwU</b></h1>
         <table style="width:100%; height: 50%;   padding: 25px;">
             <tr class="menu-row">
                 <td> <button class="mainitem">VENTA</button> </td>

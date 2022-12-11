@@ -1,15 +1,10 @@
 <template>
-    <ul>
-        <li>
-            <b>Total a pagar:</b>
-        </li>
-        <li>
-            <b>{{ toPay }}</b>
-        </li>
-        <li>
-            <button class="AddButton">PAGAR</button>
-        </li>
-    </ul>
+
+    <div class="footToPay">
+        <b>Total a pagar:</b>
+        <b>{{ toPay }}</b>
+
+    </div>
 
 </template>
 
@@ -39,10 +34,14 @@ export default {
 <style scoped>
 .body {
     height: 100%;
+    width: 100%;
+    background-color: white;
 }
 
 b {
     font-size: 25px;
+    padding: 10px;
+    background-color: white;
 }
 
 li {
@@ -51,11 +50,13 @@ li {
     display: inline;
     line-height: 50%;
     padding: 10px;
+    background-color: white;
 }
 
-.AddButton {
-    width: 100%;
-    height: 100%;
-    float: right;
+
+.footToPay {
+    display: inline;
+    padding-top: 20px;
+
 }
 </style>

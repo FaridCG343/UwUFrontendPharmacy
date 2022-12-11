@@ -1,22 +1,38 @@
 <template>
     <div class="cardBody">
 
-        <ul>
-            <li>
-                <p><b>{{ barcode }}</b></p>
-            </li>
-            <li>
-                <button>-</button>
-            </li>
 
-            <li><input type="number" /></li>
+        <div class="Product">
+            <p><b>{{ barcode }}</b>.........<b>54$</b></p>
+            <p><b>promocion</b></p>
 
-            <li>
-                <button>+</button>
-            </li>
 
-            <li><button class="delete">DELETE</button></li>
-        </ul>
+        </div>
+
+
+
+        <div class="rightAligment">
+            <ul>
+                <li>
+                    <button>-</button>
+                </li>
+
+                <li><input type="number" /></li>
+
+                <li>
+                    <button>+</button>
+                </li>
+
+                <li><button class="delete">X</button></li>
+            </ul>
+        </div>
+
+
+
+
+
+
+
 
 
     </div>
@@ -49,6 +65,7 @@ export default {
 .cardBody {
     margin: 0 auto;
     width: 100%;
+    display: inline;
 
 }
 
@@ -77,5 +94,17 @@ li {
 
 h1 {
     margin-right: 65vh;
+}
+
+.rightAligment {
+    float: right;
+    width: 40%;
+
+}
+
+.Product {
+    float: left;
+    line-height: 5%;
+    width: 40%;
 }
 </style>

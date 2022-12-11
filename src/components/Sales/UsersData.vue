@@ -1,6 +1,6 @@
 <template>
     <div class="login">
-        <h1>Registro de nuevo cliente</h1>
+        <h1>Iniciar cliente</h1>
         <label for="fname">Card Code:</label>
         <input type="text" id="fname" name="fname"><br><br>
 
@@ -9,7 +9,30 @@
 
     <div class="registerUser">
         <form>
-            <h1>Registro de nuevo cliente</h1>
+            <h1>Registro cliente</h1>
+            <label for="fname">Nombre Completo:</label>
+            <input type="text" id="fname" name="fname"><br><br>
+
+            <label for="lname">Correo:</label>
+            <input type="text" id="lname" name="lname"><br><br>
+
+            <label for="lname">Telefono:</label>
+            <input type="text" id="lname" name="lname"><br><br>
+
+            <label for="lname">Direccion:</label>
+            <input type="text" id="lname" name="lname"><br><br>
+
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+
+    <div class="modifyUser">
+        <form>
+            <h1>Modificar de nuevo cliente</h1>
+            <label for="fname">Card Code:</label>
+            <input type="text" id="fname" name="fname"><br><br>
+
+
             <label for="fname">Nombre Completo:</label>
             <input type="text" id="fname" name="fname"><br><br>
 

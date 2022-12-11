@@ -1,8 +1,7 @@
 <template>
     <ul class="NewAdd">
         <li><input class="barcodeInput" /></li>
-
-        <li class="addInput"><button class="AddButton">ADD</button></li>
+        <li class="addInput"><button class="AddButton">Agregar</button></li>
     </ul>
 </template>
 
@@ -29,9 +28,14 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-.NewAdd {
-    padding: 10px;
+.body {
     width: 100%;
+}
+
+.NewAdd {
+    width: 100%;
+    background-color: white;
+    padding: 10px;
 }
 
 .Total {
