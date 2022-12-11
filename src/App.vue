@@ -1,15 +1,14 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <StartMenu style="min-height: 100vh;"/>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import StartMenu from './components/StartMenu.vue'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    StartMenu
   }
 }
 </script>
