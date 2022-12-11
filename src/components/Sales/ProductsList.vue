@@ -1,6 +1,6 @@
 <template>
 
-    <table>
+    <table class="scrollpane">
         <tr v-for="(row, index) in productList" :key="index">
             <cardItem class="cardItem" :barcode="row" />
         </tr>
@@ -13,7 +13,7 @@ import cardItem from '../ItemsListsComponents/productCardList.vue';
 
 export default {
 
-    name: 'StartMenu',
+    name: 'ProductList',
     components: {
         cardItem,
     },
@@ -22,16 +22,11 @@ export default {
 
     data() {
         return {
-            algo: "otro",
             productList: ["Prueba1", "prueba2", "prueba2", "prueba2", "prueba2",
                 "prueba2", "prueba2", "prueba2", "prueba2", "prueba2",],
         }
     },
     methods: {
-        getrow() {
-            let rows = this.productList.length / 5;
-            return (rows > 0 ? rows : 1);
-        }
     }
 
 
@@ -43,5 +38,9 @@ export default {
 <style scoped>
 .cardItem {
     width: 100%;
+}
+
+.scrollpane {
+    overflow-y: scroll;
 }
 </style>

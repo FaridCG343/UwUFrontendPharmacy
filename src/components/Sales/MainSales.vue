@@ -2,13 +2,12 @@
     <div class="container" style="display: flex; height: 100%; ">
         <div class="left">
             <ProductsList class="ProductsList" />
-            <TotalToPayVue />
+            <AddItem />
+            <TotalToPay />
 
 
         </div>
         <div class="right">
-            <h1>algoder</h1>
-
         </div>
 
 
@@ -18,7 +17,9 @@
 <script>
 // import RightMainMenu from './RightMainMenu.vue'
 import ProductsList from './ProductsList.vue';
-import TotalToPayVue from './TotalToPay.vue';
+import AddItem from './AddItem.vue';
+import TotalToPay from './TotalToPay.vue';
+import UserData from './UsersData.vue';
 
 export default {
 
@@ -26,7 +27,8 @@ export default {
     components: {
         // RightMainMenu,
         ProductsList,
-        TotalToPayVue
+        AddItem,
+        TotalToPay
     },
     props: {
     },

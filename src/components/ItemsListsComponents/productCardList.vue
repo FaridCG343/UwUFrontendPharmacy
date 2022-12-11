@@ -3,7 +3,7 @@
 
         <ul>
             <li>
-                <h1>{{ barcode }}</h1>
+                <p><b>{{ barcode }}</b></p>
             </li>
             <li>
                 <button>-</button>
