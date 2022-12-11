@@ -2,9 +2,7 @@
 
     <table>
         <tr v-for="(row, index) in productList" :key="index">
-            <th v-for="(item, ind) in row" :key="ind">
-                <cardItem class="cardItem" :barcode="item" />
-            </th>
+            <cardItem class="cardItem" :barcode="row" />
         </tr>
     </table>
 
@@ -25,8 +23,8 @@ export default {
     data() {
         return {
             algo: "otro",
-            productList: [["Prueba1", "prueba2", "prueba2", "prueba2", "prueba2"],
-            ["prueba2", "prueba2", "prueba2", "prueba2", "prueba2",]],
+            productList: ["Prueba1", "prueba2", "prueba2", "prueba2", "prueba2",
+                "prueba2", "prueba2", "prueba2", "prueba2", "prueba2",],
         }
     },
     methods: {
@@ -45,7 +43,5 @@ export default {
 <style scoped>
 .cardItem {
     width: 100%;
-
-
 }
 </style>

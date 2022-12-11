@@ -1,17 +1,22 @@
 <template>
     <div class="cardBody">
-        <h1>{{ barcode }}</h1>
+
         <ul>
+            <li>
+                <h1>{{ barcode }}</h1>
+            </li>
             <li>
                 <button>-</button>
             </li>
+
             <li><input type="number" /></li>
+
             <li>
                 <button>+</button>
             </li>
 
+            <li><button class="delete">DELETE</button></li>
         </ul>
-        <button class="delete">DELETE</button>
 
 
     </div>
@@ -41,14 +46,9 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-h1 {
-    text-align: center;
-
-}
-
 .cardBody {
     margin: 0 auto;
-    width: 26%;
+    width: 100%;
 
 }
 
@@ -57,9 +57,12 @@ h1 {
 }
 
 input {
-    width: 30%;
+    width: 100%;
 }
 
+ul {
+    display: inline;
+}
 
 
 li {
@@ -70,5 +73,9 @@ li {
 .delete {
     width: 100%;
     height: 100%;
+}
+
+h1 {
+    margin-right: 65vh;
 }
 </style>
