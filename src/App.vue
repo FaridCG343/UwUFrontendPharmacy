@@ -1,8 +1,8 @@
 <template>
   <ul>
     <li><router-link to="/ventas">Ventas</router-link></li>
-    <li><a href="contact.asp">Clientes</a></li>
-    <li><a href="about.asp">Usuarios</a></li>
+    <li><router-link to="/">Login</router-link></li>
+    <li><router-link to="/user">User</router-link></li>
     <li><router-link to="/">Login</router-link></li>
     <li><router-link to="/">Logout</router-link></li>
   </ul>
