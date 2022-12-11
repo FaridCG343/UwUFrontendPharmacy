@@ -4,10 +4,9 @@
             <ProductsList class="ProductsList" />
             <AddItem />
             <TotalToPay />
-
-
         </div>
         <div class="right">
+            <UserData />
         </div>
 
 
@@ -28,7 +27,8 @@ export default {
         // RightMainMenu,
         ProductsList,
         AddItem,
-        TotalToPay
+        TotalToPay,
+        UserData
     },
     props: {
     },

@@ -50,13 +50,15 @@ li {
 }
 
 .addInput {
-    padding-left: 10%;
+    padding-right: 6%;
     border-right: 10%;
-    width: 40%;
+    width: 30%;
+    float: right;
 
 }
 
 .AddButton {
     width: 100%;
+    float: right;
 }
 </style>
