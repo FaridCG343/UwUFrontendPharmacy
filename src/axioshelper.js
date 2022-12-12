@@ -7,9 +7,10 @@ const axiosAPI = axios.create({
 });
 
 // implement a method to execute all the request from here.
-const apiRequest = async (method, url, request) => {
+const apiRequest = async (method, url, request, token) => {
     const headers = {
-        authorization: ""
+        authorization: "",
+        'token-h': token
     };
     //using the axios instance to perform the request that received from each http method
     try {
@@ -27,9 +28,9 @@ const apiRequest = async (method, url, request) => {
 
 
 // function to execute the http post request
-const post = (url, request) => apiRequest("post", url, request);
-const delet = (url, request) => apiRequest("delete", url, request);
-const get = (url, request) => apiRequest("get", url, request);
+const post = (url, request, token) => apiRequest("post", url, request, token);
+const delet = (url, request, token) => apiRequest("delete", url, request, token);
+const get = (url, request, token) => apiRequest("get", url, request, token);
 
 
 // expose your method to other services or actions
