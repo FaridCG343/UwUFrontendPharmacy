@@ -12,7 +12,6 @@
 <script>
 import router from './router';
 import { token, setToken } from './token';
-console.log(token != null)
 export default {
   name: 'App',
   data() {
@@ -24,13 +23,11 @@ export default {
     logout() {
       setToken(null)
       this.token = null
-      console.log(this.token)
       document.cookie = 'token_c=; Path=/; Expires=Thu, 01 Jan 1970 00:00:01 GMT;';
       router.push("/ventas")
     },
     gettoken() {
       this.token = token
-      console.log(this.token)
     }
   }
 }
@@ -53,7 +50,7 @@ body {
   margin-top: 0;
   margin-left: 0;
   margin-bottom: 0;
-  margin-right: 0s;
+  margin-right: 0;
 }
 
 ul {

@@ -1,19 +1,19 @@
 <template>
     <table>
         <tr>
-            <th><button>10</button></th>
-            <th><button>20</button></th>
-            <th><button>50</button></th>
+            <th><button @click="add(10)">10</button></th>
+            <th><button @click="add(20)">20</button></th>
+            <th><button @click="add(50)">50</button></th>
         </tr>
         <tr>
-            <th><button>100</button></th>
-            <th><button>200</button></th>
-            <th><button>500</button></th>
+            <th><button @click="add(100)">100</button></th>
+            <th><button @click="add(200)">200</button></th>
+            <th><button @click="add(500)">500</button></th>
         </tr>
     </table>
     <label>Otra Cantidad</label>
-    <input type="number" />
-    <button class="submitPay">Pagar</button>
+    <input type="number" v-model="montoProcesar" />
+    <button class="submitPay" @click="add(montoProcesar)">Pagar</button>
 
 
 </template>
@@ -31,9 +31,15 @@ export default {
     },
     data() {
         return {
-            // data
+            montoProcesar: 0
         }
     },
+    methods: {
+        add(value) {
+            this.$parent.restarTotal(value)
+            this.montoProcesar = 0
+        }
+    }
 }
 
 </script>

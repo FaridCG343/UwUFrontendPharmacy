@@ -45,22 +45,17 @@
             <button @click="setUpdate">Cancel</button>
         </div>
     </div>
-    <paymentComponent />
 
 </template>
 
 
 <script>
-import paymentComponent from "./paymentComponent.vue"
 import API from "@/axioshelper"
 import { token } from "@/token"
 
 export default {
 
     name: 'productCardList',
-    components: {
-        paymentComponent,
-    },
     props: {
     },
     data() {
@@ -117,6 +112,16 @@ export default {
             if (response.status == 200) {
                 this.update = false
             }
+        },
+        resetUserData() {
+            this.nombre = ''
+            this.apellidos = ""
+            this.telefono = ""
+            this.direccion = null
+            this.correo = ""
+            this.card_id = null
+            this.update = false
+            this.clienteIniciado = false
         }
     }
 }
