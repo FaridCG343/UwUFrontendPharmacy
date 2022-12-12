@@ -2,7 +2,7 @@
     <div class="container" style="display: flex; height: 100%; ">
         <div class="left">
             <div class="productListContainer">
-                <ProductsList class="ProductsList" />
+                <ProductsList class="ProductsList" :modificable="true" />
             </div>
         </div>
         <div class="right">
@@ -20,7 +20,7 @@
 
 <script>
 // import RightMainMenu from './RightMainMenu.vue'
-import ProductsList from './ProductsList.vue';
+import ProductsList from '../ItemsListsComponents/ProductsList.vue';
 import AddItem from './AddItem.vue';
 import TotalToPay from './TotalToPay.vue';
 import UserData from './UsersData.vue';

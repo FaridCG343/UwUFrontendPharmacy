@@ -14,16 +14,25 @@
         <div class="rightAligment">
             <ul>
                 <li>
-                    <button>-</button>
+                    <button v-if="modificableLocal == 'true'">-</button>
                 </li>
-
-                <li><input type="number" /></li>
 
                 <li>
-                    <button>+</button>
+                    <input type="number" v-if="modificableLocal == 'true'" />
+                    <p disabled v-else>0</p>
+
+
                 </li>
 
-                <li><button class="delete">X</button></li>
+                <li>
+                    <button v-if="modificableLocal == 'true'">+</button>
+                </li>
+
+                <li>
+                    <button class="delete" v-if="modificableLocal == 'true'">X</button>
+                </li>
+
+
             </ul>
         </div>
 
@@ -50,12 +59,15 @@ export default {
     },
     props: {
         barcode: String,
+        modificable: Boolean,
+
     },
     data() {
         return {
-            // data
+            modificableLocal: this.modificable,
         }
     },
+
 }
 
 </script>
@@ -79,12 +91,15 @@ input {
 
 ul {
     display: inline;
+    float: right;
+    background-color: white;
 }
 
 
 li {
     display: inline;
     margin: 10px;
+    background-color: white;
 }
 
 .delete {
