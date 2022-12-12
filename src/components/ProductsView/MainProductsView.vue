@@ -7,6 +7,7 @@
 
 import ProductsList from '../ItemsListsComponents/ProductsList.vue';
 import API from "@/axioshelper";
+import { token } from '@/token';
 
 export default {
 
@@ -29,20 +30,7 @@ export default {
 
     methods: {
         async getList() {
-
-            this.products = await API.get("product/list", null, this.$store.state.token);
-            console.log(this.products);
-            // this.$refs.ProductList.addProduct("negrito", 23, "ninguna", 10);
-            // this.$refs.ProductList.addProduct("negrito", 23, "ninguna", 10);
-            // this.$refs.ProductList.addProduct("negrito", 23, "ninguna", 10);
-            // this.$refs.ProductList.addProduct("negrito", 23, "ninguna", 10);
-            // this.$refs.ProductList.addProduct("negrito", 23, "ninguna", 10);
-            // this.$refs.ProductList.addProduct("negrito", 23, "ninguna", 10);
-            // this.$refs.ProductList.addProduct("negrito", 23, "ninguna", 10);
-            // this.$refs.ProductList.addProduct("negrito", 23, "ninguna", 10);
-
-
-
+            this.products = await API.get("product/list", null, token);
         }
     }
 

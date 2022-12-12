@@ -8,22 +8,13 @@
     </div>
 
     <div class="registerUser">
-        <form>
-            <h1>Registro cliente</h1>
-            <label for="fname">Nombre Completo:</label>
-            <input type="text" id="fname" name="fname"><br><br>
-
-            <label for="lname">Correo:</label>
-            <input type="text" id="lname" name="lname"><br><br>
-
-            <label for="lname">Telefono:</label>
-            <input type="text" id="lname" name="lname"><br><br>
-
-            <label for="lname">Direccion:</label>
-            <input type="text" id="lname" name="lname"><br><br>
-
-            <input type="submit" value="Submit">
-        </form>
+        <h1>Registro cliente</h1>
+        <input type="text" v-model="nombre" placeholder="Nombre*" required>
+        <input type="text" v-model="apellidos" placeholder="Apellidos*" required>
+        <input type="email" v-model="correo" placeholder="Email*" required>
+        <input type="text" v-model="telefono" placeholder="Telefono*" required>
+        <input type="text" v-model="direccion" placeholder="Direccion*">
+        <button @click="register">Registrar</button>
     </div>
 
     <div class="modifyUser">
@@ -62,6 +53,8 @@
 
 <script>
 import paymentComponent from "./paymentComponent.vue"
+import API from "@/axioshelper"
+import { token } from "@/token"
 
 export default {
 
@@ -73,9 +66,27 @@ export default {
     },
     data() {
         return {
-            // data
+            nombre: '',
+            apellidos: "",
+            telefono: "",
+            direccion: "",
+            correo: "",
+            card_id: null,
         }
     },
+    methods: {
+        async register() {
+            let request = {
+                nombre: this.nombre,
+                apellidos: this.apellidos,
+                telefono: this.telefono,
+                correo: this.correo,
+                direccion: this.direccion
+            }
+            let response = await API.post('client/afiliate', request, token)
+            console.log(response)
+        }
+    }
 }
 
 </script>

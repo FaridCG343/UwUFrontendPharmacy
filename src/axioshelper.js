@@ -20,9 +20,15 @@ const apiRequest = async (method, url, request, token) => {
             data: request,
             headers
         });
-        return await Promise.resolve(res.data);
+
+        let response = await Promise.resolve(res.data);
+        let status = res.status
+        response.status = status
+        return response
     } catch (err) {
-        return await Promise.reject(err);
+        alert(err.response.data.detail.message)
+        let response = { status: err.response.status }
+        return response;
     }
 };
 
