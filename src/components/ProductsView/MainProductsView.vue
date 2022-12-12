@@ -1,6 +1,6 @@
 <template>
 
-    <ProductsList :modificable="false" />
+    <ProductsList :modificable="false" ref="ProductList" />
 </template>
 
 <script>
@@ -21,10 +21,27 @@ export default {
             products: "",
         }
     },
+    mounted: function () {
+        this.$nextTick(function () {
+            this.getList();
+        })
+    },
+
     methods: {
         async getList() {
+
             this.products = API.get("product/list");
             console.log(this.products);
+            // this.$refs.ProductList.addProduct("negrito", 23, "ninguna", 10);
+            // this.$refs.ProductList.addProduct("negrito", 23, "ninguna", 10);
+            // this.$refs.ProductList.addProduct("negrito", 23, "ninguna", 10);
+            // this.$refs.ProductList.addProduct("negrito", 23, "ninguna", 10);
+            // this.$refs.ProductList.addProduct("negrito", 23, "ninguna", 10);
+            // this.$refs.ProductList.addProduct("negrito", 23, "ninguna", 10);
+            // this.$refs.ProductList.addProduct("negrito", 23, "ninguna", 10);
+            // this.$refs.ProductList.addProduct("negrito", 23, "ninguna", 10);
+
+
 
         }
     }
