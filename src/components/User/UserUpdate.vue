@@ -8,10 +8,16 @@
 
 <script>
 export default {
+    data() {
+        return {
+            men: ""
+        };
+    },
     methods: {
-        saludar(men) {
-            alert(men);
+        saludar() {
+            return "uwu";
         }
+
     }
 }
 </script>
