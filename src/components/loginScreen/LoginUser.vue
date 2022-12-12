@@ -9,7 +9,6 @@
 
 <script>
 import API from '@/axioshelper';
-import { token, setToken } from '@/token';
 
 export default {
     data() {
@@ -21,9 +20,9 @@ export default {
     methods: {
         async login(usr, pass) {
             let response = await API.post("login", { username: usr, password: pass })
-            document.cookie = 'token_c=' + response.token + "; SameSite=None;"
-            setToken(response.token)
-            console.log(token)
+            document.cookie = 'token_c=' + response.token + "; SameSite=None; Secure"
+            this.$store.commit('setToken', response.token)
+            console.log(this.$store.state.token)
         }
     }
 }

@@ -1,4 +1,10 @@
-var token = ''
+let cookies = document.cookie
+if (cookies == '') {
+    var token = ''
+} else {
+    cookies = cookies.split(";")
+}
+
 
 function setToken(value) {
     token = value;
