@@ -1,6 +1,6 @@
 <template>
   <ul>
-    <li><router-link to="/ventas">Ventas</router-link></li>
+    <li><router-link to="/ventas">Sales</router-link></li>
     <li><router-link to="/">Login</router-link></li>
     <li><router-link to="/user">User</router-link></li>
     <li><router-link to="/">Login</router-link></li>
