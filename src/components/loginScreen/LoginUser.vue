@@ -21,8 +21,16 @@ export default {
     methods: {
         async login(usr, pass) {
             let response = await API.post("login", { username: usr, password: pass })
-            document.cookie = 'token_c=' + response.token + "; SameSite=None; Secure"
-            setToken(response.token)
+            if (response.status == 200) {
+                document.cookie = 'token_c=' + response.token + "; SameSite=None; Secure"
+                setToken(response.token)
+                alert("Bienvenido uwu")
+                this.username = ""
+                this.password = ''
+                this.$emit("gettoken")
+                this.$router.push("/")
+            }
+
         }
     }
 }

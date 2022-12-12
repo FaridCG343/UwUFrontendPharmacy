@@ -13,7 +13,7 @@
         <input type="text" v-model="apellidos" placeholder="Apellidos*" required>
         <input type="email" v-model="correo" placeholder="Email*" required>
         <input type="text" v-model="telefono" placeholder="Telefono*" required>
-        <input type="text" v-model="direccion" placeholder="Direccion*">
+        <input type="text" v-model="direccion" placeholder="Direccion">
         <button @click="register">Registrar</button>
     </div>
 
@@ -41,10 +41,10 @@
     </div>
 
     <div class="registeredUser">
-        <h1>Hamlet Solano Diaz</h1>
-        <h2>hamletsolanod@gmail.com</h2>
-        <h2>656 2227106</h2>
-        <h2>region de livorno 1305</h2>
+        <h1>{{ nombre }}</h1>
+        <h2>{{ correo }}</h2>
+        <h2>{{ telefono }}</h2>
+        <h2>{{ direccion }}</h2>
     </div>
     <paymentComponent />
 
@@ -69,7 +69,7 @@ export default {
             nombre: '',
             apellidos: "",
             telefono: "",
-            direccion: "",
+            direccion: null,
             correo: "",
             card_id: null,
         }
@@ -83,8 +83,10 @@ export default {
                 correo: this.correo,
                 direccion: this.direccion
             }
-            let response = await API.post('client/afiliate', request, token)
-            console.log(response)
+            let response = await API.post('client/affiliate', request, token)
+            if (response.status == 200) {
+                alert(response.message + "\n" + "Numero de tarjeta" + response.numTarjeta)
+            }
         }
     }
 }

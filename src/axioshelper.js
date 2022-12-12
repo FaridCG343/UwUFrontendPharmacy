@@ -26,6 +26,7 @@ const apiRequest = async (method, url, request, token) => {
         response.status = status
         return response
     } catch (err) {
+        console.log(err.response)
         alert(err.response.data.detail.message)
         let response = { status: err.response.status }
         return response;

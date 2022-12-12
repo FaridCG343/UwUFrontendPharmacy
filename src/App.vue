@@ -2,17 +2,37 @@
   <ul>
     <li><router-link to="/ventas">Ventas</router-link></li>
     <li><router-link to="/products">Productos</router-link></li>
-    <li><router-link to="/login">Login</router-link></li>
     <li><router-link to="/user">User</router-link></li>
-    <li><router-link to="/">Logout</router-link></li>
+    <li v-show="token == null"><router-link to="/login">Login</router-link></li>
+    <li v-show="token != null"><a @click="logout">Logout</a></li>
   </ul>
   <RouterView></RouterView>
 </template>
 
 <script>
-
+import router from './router';
+import { token, setToken } from './token';
+console.log(token != null)
 export default {
-  name: 'App'
+  name: 'App',
+  data() {
+    return {
+      token: token
+    };
+  },
+  methods: {
+    logout() {
+      setToken(null)
+      this.token = null
+      console.log(this.token)
+      document.cookie = 'token_c=; Path=/; Expires=Thu, 01 Jan 1970 00:00:01 GMT;';
+      router.push("/ventas")
+    },
+    gettoken() {
+      this.token = token
+      console.log(this.token)
+    }
+  }
 }
 </script>
 

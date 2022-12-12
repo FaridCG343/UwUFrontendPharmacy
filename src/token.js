@@ -1,7 +1,7 @@
 let cookies = document.cookie
-var token = ''
+var token = null
 if (cookies == '') {
-    token = ''
+    token = null
 } else {
     cookies.split(";").forEach((value) => {
         let arr = value.split("=")
