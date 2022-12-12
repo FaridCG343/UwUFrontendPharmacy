@@ -6,20 +6,29 @@
 <script>
 
 import ProductsList from '../ItemsListsComponents/ProductsList.vue';
+import API from "@/axioshelper";
+
 export default {
 
     name: 'MainProductsView',
     components: {
         ProductsList
-
     },
     props: {
     },
     data() {
         return {
-            // data
+            products: "",
         }
     },
+    methods: {
+        async getList() {
+            this.products = API.get("product/list");
+            console.log(this.products);
+
+        }
+    }
+
 }
 
 </script>

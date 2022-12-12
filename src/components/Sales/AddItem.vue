@@ -1,13 +1,13 @@
 <template>
     <ul class="NewAdd">
         <li><input class="barcodeInput" /></li>
-        <li class="addInput"><button class="AddButton" id="get-joke" @click="getProductList">Agregar</button></li>
+        <li class="addInput"><button class="AddButton" id="add-product" @click="getProductList">Agregar</button></li>
     </ul>
 </template>
 
 
 <script>
-
+import API from "@/axioshelper";
 
 
 export default {
@@ -26,6 +26,12 @@ export default {
         }
     },
     methods: {
+        getProductList() {
+            this.responseAvailable = API.get("product/1");
+            console.log(this.responseAvailable);
+
+
+        }
     }
 }
 

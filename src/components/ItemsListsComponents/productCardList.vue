@@ -3,8 +3,8 @@
 
 
         <div class="Product">
-            <p><b>{{ barcode }}</b>.........<b>54$</b></p>
-            <p><b>promocion</b></p>
+            <p><b>{{ barcode }}</b>.........<b>{{ price }}$</b></p>
+            <p><b>{{ promotion }}</b></p>
 
 
         </div>
@@ -18,8 +18,8 @@
                 </li>
 
                 <li>
-                    <input type="number" v-if="modificableLocal == 'true'" />
-                    <p disabled v-else>0</p>
+                    <input type="number" v-if="modificableLocal == 'true'" :value="quantity" />
+                    <p disabled v-else>{{ quantity }}</p>
 
 
                 </li>
@@ -59,6 +59,9 @@ export default {
     },
     props: {
         barcode: String,
+        price: Number,
+        promotion: String,
+        quantity: Number,
         modificable: Boolean,
 
     },

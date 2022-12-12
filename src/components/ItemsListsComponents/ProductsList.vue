@@ -1,13 +1,16 @@
 <template>
 
     <table class="scrollpane" v-if="modificable">
-        <tr v-for="(row, index) in productList" :key="index">
-            <cardItem class="cardItem" :barcode="row" modificable="true" />
+        <tr v-for="(row, index) in productNameList" :key="index">
+            <cardItem class="cardItem" :barcode="productNameList[index]" :price="productPriceList[index]"
+                :promotion="productPromotionList[index]" :quantity="productQuantityList[index]" modificable="true" />
         </tr>
     </table>
+
     <table class="scrollpane" v-else>
-        <tr v-for="(row, index) in productList" :key="index">
-            <cardItem class="cardItem" :barcode="row" modificable="false" />
+        <tr v-for="(row, index) in productNameList" :key="index">
+            <cardItem class="cardItem" :barcode="productNameList[index]" :price="productPriceList[index]"
+                :promotion="productPromotionList[index]" :quantity="productQuantityList[index]" modificable="false" />
         </tr>
     </table>
 
@@ -24,39 +27,22 @@ export default {
     },
     props: {
         modificable: Boolean,
-
     },
 
     data() {
         return {
-            productList: ["Prueba1", "prueba2", "prueba2", "prueba2", "prueba2",
-                "prueba2", "prueba2", "prueba2", "prueba2", "prueba2",],
+            productNameList: ["Prueba1"],
+            productPriceList: [40],
+            productPromotionList: ["Sin promocion"],
+            productQuantityList: [10]
         }
     },
     methods: {
-        getProductList() {
-            this.responseAvailable = false;
-            fetch("https://jokes-database.p.rapidapi.com/", {
-                "method": "GET",
-                "headers": {
-                    "x-rapidapi-host": "jokes-database.p.rapidapi.com",
-                    "x-rapidapi-key": this.apiKey
-                }
-            })
-                .then(response => {
-                    if (response.ok) {
-                        return response.json()
-                    } else {
-                        alert("Server returned " + response.status + " : " + response.statusText);
-                    }
-                })
-                .then(response => {
-                    this.result = response.body;
-                    this.responseAvailable = true;
-                })
-                .catch(err => {
-                    console.log(err);
-                });
+        async addProduct(productBarcode, price, promotion, quantity) {
+            this.productNameList.push(productBarcode);
+            this.productPriceList.push(price);
+            this.productPromotionList.push(promotion);
+            this.productQuantityList.push(quantity);
         }
 
 

@@ -4,6 +4,7 @@ import MainSales from './components/Sales/MainSales.vue'
 import UserMenu from './components/User/UserMenu.vue'
 import UserRegister from './components/User/UserRegister.vue'
 import UserUpdate from './components/User/UserUpdate.vue'
+import MainProductsView from './components/ProductsView/MainProductsView.vue';
 
 const router = createRouter({
     history: createWebHistory(),
