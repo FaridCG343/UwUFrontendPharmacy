@@ -1,13 +1,12 @@
 <template>
     <ul class="NewAdd">
         <li><input class="barcodeInput" /></li>
-        <li class="addInput"><button class="AddButton" id="get-joke" @click="getProductList">Agregar</button></li>
+        <li class="addInput"><button class="AddButton">Agregar</button></li>
     </ul>
 </template>
 
 
 <script>
-
 
 
 export default {
@@ -20,9 +19,7 @@ export default {
     },
     data() {
         return {
-            responseAvailable: "",
-            result: "",
-
+            response: null
         }
     },
     methods: {

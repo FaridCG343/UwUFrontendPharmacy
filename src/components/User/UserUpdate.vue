@@ -3,6 +3,7 @@
     <p>Message is: {{ men }}</p>
     <input v-model="men" placeholder="edit me" />
     <button @click="saludar(men)">Hola</button>
+    <p>{{ saludar }}</p>
 </template>
 
 
@@ -12,6 +13,9 @@ export default {
         return {
             men: ""
         };
+    },
+    computed: {
+
     },
     methods: {
         saludar() {
