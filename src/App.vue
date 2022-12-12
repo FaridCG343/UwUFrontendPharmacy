@@ -2,7 +2,6 @@
   <ul>
     <li><router-link to="/ventas">Ventas</router-link></li>
     <li><router-link to="/products">Productos</router-link></li>
-
     <li><router-link to="/">Login</router-link></li>
     <li><router-link to="/user">User</router-link></li>
     <li><router-link to="/">Logout</router-link></li>

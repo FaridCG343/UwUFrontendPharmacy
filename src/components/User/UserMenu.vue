@@ -1,10 +1,11 @@
 <template>
     <div>
-        <RouterLink to="/user/register" v-slot="{ registrar }">
-            <button @click="registrar" role="link">Registrar Ususario</button>
+        <RouterLink to="/user/register" v-slot="{ register }">
+            <button @click="register" role="link">Register user</button>
         </RouterLink>
-
-        <button>Cambiar contraseña</button>
+        <RouterLink to="/user/update" v-slot="{ update }">
+            <button @click="update" role="link">Change password</button>
+        </RouterLink>
     </div>
 </template>
 
