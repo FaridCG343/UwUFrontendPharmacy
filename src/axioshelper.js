@@ -38,8 +38,9 @@ const apiRequest = async (method, url, request, token) => {
 const post = (url, request, token) => apiRequest("post", url, request, token);
 const delet = (url, request, token) => apiRequest("delete", url, request, token);
 const get = (url, request, token) => apiRequest("get", url, request, token);
+const put = (url, request, token) => apiRequest("put", url, request, token);
 
 
 // expose your method to other services or actions
-const API = { post, get, delet };
+const API = { post, get, delet, put };
 export default API;
